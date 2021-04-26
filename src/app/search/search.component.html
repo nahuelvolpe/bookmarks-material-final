@@ -1,0 +1,35 @@
+ <mat-card class='full-width'>
+      <mat-card-title>Busqueda de Links</mat-card-title>
+      <mat-card-content>
+          <mat-form-field>
+      <input  #searchBox id="search-box" (keyup)="search(searchBox.value)"matInput placeholder="Buscar" />
+    </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+
+    <mat-accordion #enlaces>
+  <mat-expansion-panel *ngFor="let enlace of enlaces$ | async">
+    <mat-expansion-panel-header class="right-aligned-header">
+      <mat-panel-title>
+        {{enlace.asunto}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{enlace.id}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <b>DESCRIPCION:</b> {{enlace.desc}} <br>
+    <b>LINK:</b> {{enlace.url}} <br>
+    <button mat-stroked-button color="primary" (click)="agregar(enlace)"></button> 
+  </mat-expansion-panel>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+  </mat-expansion-panel>
+</mat-accordion>
+    
+  
+<br>
+<button mat-raised-button color="primary"> Volver </button>
+
+
+ 

@@ -1,0 +1,22 @@
+/* Add application styles & imports to this file! */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.right-aligned-header > .mat-content {
+    justify-content: space-between;
+}
+
+.mat-content > mat-panel-title, .mat-content > mat-panel-description {
+  flex: 0 0 auto;
+}
+
+.mat-icon {
+    transform: scale(0.75);
+}
+
+mat-card-title,
+mat-card-content {
+      display: flex;
+      justify-content: center;
+    }
+
+    
